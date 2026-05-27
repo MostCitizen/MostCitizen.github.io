@@ -49,14 +49,25 @@ export const portfolioData = {
   ] as Skill[],
   experiences: [
     {
+      company: "MYPT (개인 프로젝트)",
+      role: "Lead Developer",
+      period: "2024.03 - Present",
+      description: [
+        "Flutter와 Riverpod을 활용한 크로스 플랫폼 운동 관리 애플리케이션 개발",
+        "추상화된 레포지토리 패턴과 Riverpod을 결합하여 Real/Mock 데이터 환경을 자유롭게 전환할 수 있는 시스템 설계",
+        "flutter_dotenv를 이용한 환경 변수 기반의 서버 인프라 스위칭 로직 구현",
+        "iOS iPad 전체 화면 대응 및 다양한 스크린 사이즈를 고려한 반응형 UI 구현",
+      ],
+    },
+    {
       company: "전능아이티 (개발2팀)",
       role: "소프트웨어 개발자 (프리랜서)",
       period: "2024.12 - 2025.02",
       description: [
-        "고객 관리 프로그램 예약 현황 등 각종 상황별 화면보기 기능 추가로 사용자 편의성 증대",
-        "참조 구조가 복잡한 레거시 코드의 레이어 구조 개편을 통해 개발 생산성 및 유지보수성 향상",
-        "신규 수납 통계 모듈 개발로 병원 경영 지표 데이터 시각화 구현",
-        "인센티브 산정 및 휴진 관리 등 복잡한 비즈니스 로직 최적화",
+        "고객 관리 프로그램 각종 상황별 화면보기 기능 추가 (예약 현황 등)",
+        "기존 프로그램의 레이어 구조 개편을 통한 가독성 및 유지보수성 향상",
+        "신규 수납 기능에 대한 통계 모듈 개발 및 데이터 분석",
+        "dottrace를 사용하여 병목 지점 확인 및 로직 개선으로 속도 최적화",
       ],
     },
     {
@@ -64,10 +75,9 @@ export const portfolioData = {
       role: "소프트웨어 개발자 (프리랜서)",
       period: "2024.06 - 2024.08",
       description: [
-        "메인 View를 WinForm에서 WPF로 마이그레이션하며 UI 디자인 및 응답 속도 대폭 개선",
-        "데이터 페칭 로직 최적화 및 새로고침 프로세스 개선으로 화면 렌더링 지연 현상 해결",
-        "MMF(Memory Mapped File)와 Shared Memory 기술을 적용하여 프로그램 초기 실행 속도 개선",
-        "레거시 코드 리팩터링 및 최신 라이브러리 마이그레이션을 통한 기술 부채 해소",
+        "프로그램 메인 View 마이그레이션 (WinForm → WPF) 및 디자인 전면 개편",
+        "데이터 로딩 최적화 및 새로고침 로직 개선을 통해 프로그램 성능 및 반응 속도 향상",
+        "MMF(Memory Mapped File) 기반 Shared Memory 기술을 적용하여 이미지 관리 프로그램 초기 실행 속도 개선",
       ],
     },
     {
@@ -75,9 +85,9 @@ export const portfolioData = {
       role: "소프트웨어 개발자 (프리랜서)",
       period: "2024.01 - 2024.02",
       description: [
-        ".NET Framework 기반 레거시를 .NET 6로 성공적으로 업그레이드하여 실행 성능 및 보안성 강화",
-        "업그레이드 이후 시스템 안정성 향상 및 최신 C# 언어 기능 활용으로 코드 품질 개선",
-        "AWS S3 클라우드 스토리지 연동 로직 구현으로 이미지 및 고객 차트 관리 비용 절감 및 안정성 확보",
+        "시스템 프레임워크 버전 업그레이드 (.NET Framework → .NET 6)",
+        ".NET 6 마이그레이션을 통해 전반적인 시스템 실행 성능 향상 및 유지보수 효율 증대",
+        "AWS S3 연동 비즈니스 로직 추가로 이미지 및 고객 차트 관리 프로세스 최적화",
       ],
     },
     {
@@ -85,14 +95,22 @@ export const portfolioData = {
       role: "연구원",
       period: "2021.06 - 2023.07",
       description: [
-        "dottrace 분석을 통해 병목 구간을 진단하고 Query 및 ORM 코드를 수정하여 전체 성능 30% 이상 향상",
-        "ORM(EF)에서 발생하는 과도한 Join, 사용하지 않는 컬럼 조회, N+1 문제 등을 해결하여 DB 부하 경감",
-        "비효율적인 Subquery 및 중복 Group By 제거 등 SQL 쿼리 최적화 수행",
-        "수작업으로 관리되던 티켓 기능을 RDB 설계부터 자동 알림톡 발송까지 풀스택으로 구현하여 운영 오류 0% 달성",
+        "고객관리 프로그램 티켓 시스템 개발 주도 (RDB 설계, EF 기반 CRUD 구현, 기여도 100%)",
+        "dottrace 정밀 분석을 통한 쿼리 및 ORM 코드 최적화로 평균 30% 이상의 성능 향상 달성",
+        "비효율적인 Subquery, 다수의 Group By, 불필요한 테이블 조회 등 SQL 쿼리 최적화",
+        "ORM(EF)에서 발생하는 과도한 Join, N+1 문제 해결 및 사용하지 않는 컬럼 조회 제거",
+        "알림톡 및 문자 발송 연동을 통한 티켓 관리 자동화 시스템 구축",
       ],
     },
   ] as Experience[],
   projects: [
+    {
+      title: "MYPT - Smart Workout Assistant",
+      description:
+        "사용자의 운동 루틴을 관리하고 진행 상황을 추적하는 모바일 앱입니다. 클린 아키텍처 지향 및 테스트 용이성을 위한 Mock 시스템이 핵심입니다.",
+      techStack: ["Flutter", "Riverpod", "Firebase", "Clean Architecture"],
+      period: "2024.03 - Present",
+    },
     {
       title: "CRM 티켓 통합 관리 시스템",
       description:
