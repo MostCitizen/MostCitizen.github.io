@@ -5,7 +5,13 @@ import { portfolioData } from "@/data/portfolio";
 import { motion } from "framer-motion";
 
 export function Skills() {
-  const categories = ["Frontend", "Backend", "Mobile", "DevOps", "Others"] as const;
+  const categories = [
+    "Frontend",
+    "Backend",
+    "Mobile",
+    "Database",
+    "Others",
+  ] as const;
 
   return (
     <section id="skills" className="py-24 px-6 bg-zinc-50 dark:bg-zinc-900/50">
@@ -14,7 +20,7 @@ export function Skills() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {categories.map((category) => {
             const categorySkills = portfolioData.skills.filter(
-              (s) => s.category === category
+              (s) => s.category === category,
             );
             if (categorySkills.length === 0) return null;
 
