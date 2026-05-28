@@ -2,7 +2,7 @@
 
 import React from "react";
 import { portfolioData } from "@/data/portfolio";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
 import { motion } from "framer-motion";
 
@@ -28,9 +28,9 @@ export function Projects() {
               Featured <br /> <span className="text-zinc-400">Projects</span>
             </h3>
           </div>
-          <p className="text-zinc-500 dark:text-zinc-400 max-w-sm text-lg font-light leading-relaxed">
+          <p className="text-zinc-500 dark:text-zinc-400 max-w-sm text-lg font-light leading-relaxed text-right md:text-left">
             실무 현장에서의 성능 최적화 경험과 <br />
-            개인 프로젝트를 통한 기술적 도전을 담았습니다.
+            팀 프로젝트를 통한 기술적 도전을 담았습니다.
           </p>
         </div>
 
@@ -42,14 +42,14 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+              className="group relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
             >
               {/* 프로젝트 넘버링 (배경) */}
               <div className="absolute -left-10 top-0 text-[12rem] font-black text-zinc-100 dark:text-zinc-900/20 -z-10 select-none hidden lg:block group-hover:text-zinc-200 dark:group-hover:text-zinc-800/40 transition-colors duration-700">
                 0{index + 1}
               </div>
 
-              {/* 이미지/비주얼 영역 */}
+              {/* 이미지/비주얼 영역 (링크가 있을 때만 인터랙션 활성화) */}
               <div className="lg:col-span-7 relative aspect-[16/9] rounded-[2.5rem] overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all duration-700 ease-out shadow-2xl group-hover:shadow-zinc-300/50 dark:group-hover:shadow-none group-hover:-translate-y-2">
                 <div className="absolute inset-0 bg-gradient-to-br from-zinc-200/50 via-transparent to-zinc-900/10 dark:from-zinc-800/50 dark:to-black/50 opacity-50" />
                 
@@ -58,34 +58,36 @@ export function Projects() {
                     {project.title.split(' ')[0]}
                   </h4>
                   <div className="w-12 h-[1px] bg-zinc-300 dark:bg-zinc-700 my-4" />
-                  <p className="text-[10px] font-bold tracking-[0.4em] uppercase opacity-30 group-hover:opacity-60 transition-opacity">
-                    Development Showcase
+                  <p className="text-[10px] font-bold tracking-[0.4em] uppercase opacity-30 group-hover:opacity-60 transition-opacity text-zinc-500">
+                    {project.githubUrl || project.liveUrl ? "Live Showcase" : "Enterprise Solution"}
                   </p>
                 </div>
 
-                {/* 호버 시 나타나는 오버레이 액션 버튼 */}
-                <div className="absolute inset-0 bg-zinc-900/40 dark:bg-zinc-950/60 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-sm flex items-center justify-center gap-6">
-                  {project.githubUrl && (
-                    <a 
-                      href={project.githubUrl} 
-                      target="_blank" 
-                      className="p-4 bg-white dark:bg-zinc-100 rounded-2xl text-zinc-900 hover:scale-110 active:scale-95 transition-all shadow-xl hover:shadow-white/20"
-                      aria-label="GitHub Repository"
-                    >
-                      <GitHubIcon className="h-6 w-6" />
-                    </a>
-                  )}
-                  {project.liveUrl && (
-                    <a 
-                      href={project.liveUrl} 
-                      target="_blank" 
-                      className="p-4 bg-white dark:bg-zinc-100 rounded-2xl text-zinc-900 hover:scale-110 active:scale-95 transition-all shadow-xl hover:shadow-white/20"
-                      aria-label="Live Demo"
-                    >
-                      <ExternalLink className="h-6 w-6" />
-                    </a>
-                  )}
-                </div>
+                {/* 링크가 있는 프로젝트만 호버 오버레이 표시 */}
+                {(project.githubUrl || project.liveUrl) && (
+                  <div className="absolute inset-0 bg-zinc-900/40 dark:bg-zinc-950/60 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-sm flex items-center justify-center gap-6">
+                    {project.githubUrl && (
+                      <a 
+                        href={project.githubUrl} 
+                        target="_blank" 
+                        className="p-4 bg-white dark:bg-zinc-100 rounded-2xl text-zinc-900 hover:scale-110 active:scale-95 transition-all shadow-xl hover:shadow-white/20"
+                        aria-label="GitHub Repository"
+                      >
+                        <GitHubIcon className="h-6 w-6" />
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a 
+                        href={project.liveUrl} 
+                        target="_blank" 
+                        className="p-4 bg-white dark:bg-zinc-100 rounded-2xl text-zinc-900 hover:scale-110 active:scale-95 transition-all shadow-xl hover:shadow-white/20"
+                        aria-label="Live Demo"
+                      >
+                        <ExternalLink className="h-6 w-6" />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* 텍스트 정보 영역 */}
@@ -94,7 +96,9 @@ export function Projects() {
                   <div className="flex items-center gap-4 text-[10px] font-black text-zinc-400 dark:text-zinc-500 tracking-[0.2em] uppercase">
                     <span>{project.period}</span>
                     <span className="w-1 h-1 bg-zinc-300 dark:bg-zinc-700 rounded-full" />
-                    <span className="text-zinc-900 dark:text-zinc-100">Featured Work</span>
+                    <span className="text-zinc-900 dark:text-zinc-100">
+                      {project.githubUrl || project.liveUrl ? "Public Work" : "Internal Project"}
+                    </span>
                   </div>
                   <h3 className="text-4xl md:text-5xl font-bold tracking-tighter transition-all duration-500 group-hover:translate-x-2">
                     {project.title}
@@ -104,7 +108,7 @@ export function Projects() {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
@@ -115,14 +119,15 @@ export function Projects() {
                   ))}
                 </div>
 
-                <div className="pt-4">
-                  <button className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] group/btn hover:text-zinc-500 transition-colors">
-                    <span>Case Study</span>
-                    <div className="w-10 h-10 rounded-full border border-zinc-200 dark:border-zinc-800 flex items-center justify-center group-hover/btn:bg-zinc-900 dark:group-hover/btn:bg-white group-hover/btn:text-white dark:group-hover/btn:text-zinc-900 transition-all duration-500 transform group-hover/btn:rotate-[-45deg]">
-                      <ArrowRight className="h-4 w-4" />
-                    </div>
-                  </button>
-                </div>
+                {/* 회사 프로젝트임을 알리는 차분한 텍스트로 대체 */}
+                {!project.githubUrl && !project.liveUrl && (
+                  <div className="pt-6">
+                    <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
+                      <span className="w-4 h-[1px] bg-zinc-200 dark:bg-zinc-800" />
+                      Confidential Enterprise Project
+                    </p>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
