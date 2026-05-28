@@ -6,15 +6,25 @@ import { useTheme } from "next-themes";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  // 하이드레이션 오류 방지
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div className="p-2 h-9 w-9" />;
+  }
 
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="rounded-full p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+      className="relative rounded-full p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors h-9 w-9 flex items-center justify-center overflow-hidden"
       aria-label="Toggle theme"
     >
-      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 top-2 left-2" />
+      <Sun className="h-5 w-5 transition-all dark:rotate-90 dark:scale-0 scale-100 rotate-0" />
+      <Moon className="absolute h-5 w-5 transition-all dark:rotate-0 dark:scale-100 scale-0 -rotate-90" />
     </button>
   );
 }
