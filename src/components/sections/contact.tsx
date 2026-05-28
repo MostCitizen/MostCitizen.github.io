@@ -1,7 +1,7 @@
 import React from "react";
 import { portfolioData } from "@/data/portfolio";
 import { Mail } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { GitHubIcon } from "@/components/icons";
 
 export function Contact() {
   return (
@@ -28,14 +28,6 @@ export function Contact() {
               className="p-3 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
             >
               <GitHubIcon className="h-6 w-6" />
-            </a>
-            <a
-              href={portfolioData.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
-            >
-              <LinkedInIcon className="h-6 w-6" />
             </a>
           </div>
         </div>
