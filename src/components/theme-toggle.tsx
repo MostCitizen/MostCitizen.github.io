@@ -4,15 +4,19 @@ import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
+function useMounted() {
+  const mounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+
+  return mounted;
+}
+
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
-
-  // 하이드레이션 오류 방지
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
+  const mounted = useMounted();
   if (!mounted) {
     return <div className="p-2 h-9 w-9" />;
   }
