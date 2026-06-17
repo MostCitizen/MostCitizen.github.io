@@ -3,7 +3,7 @@
 import React from "react";
 import { portfolioData } from "@/data/portfolio";
 import { ExternalLink, Terminal, ShieldCheck, Globe } from "lucide-react";
-import { GitHubIcon } from "@/components/icons";
+import { GitHubIcon, PlayStoreIcon, AppStoreIcon } from "@/components/icons";
 import { motion } from "framer-motion";
 
 export function Projects() {
@@ -37,7 +37,12 @@ export function Projects() {
         {/* 프로젝트 그리드 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {portfolioData.projects.map((project, index) => {
-            const isPublic = !!(project.githubUrl || project.liveUrl);
+            const isPublic = !!(
+              project.githubUrl ||
+              project.liveUrl ||
+              project.playStoreUrl ||
+              project.appStoreUrl
+            );
 
             return (
               <motion.div
@@ -79,6 +84,26 @@ export function Projects() {
                           className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
                         >
                           <GitHubIcon className="w-5 h-5" />
+                        </a>
+                      )}
+                      {project.playStoreUrl && (
+                        <a
+                          href={project.playStoreUrl}
+                          target="_blank"
+                          className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                          title="Google Play Store"
+                        >
+                          <PlayStoreIcon className="w-5 h-5" />
+                        </a>
+                      )}
+                      {project.appStoreUrl && (
+                        <a
+                          href={project.appStoreUrl}
+                          target="_blank"
+                          className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                          title="Apple App Store"
+                        >
+                          <AppStoreIcon className="w-5 h-5" />
                         </a>
                       )}
                       {project.liveUrl && (

@@ -11,6 +11,8 @@ export interface Project {
   techStack: string[];
   githubUrl?: string;
   liveUrl?: string;
+  playStoreUrl?: string;
+  appStoreUrl?: string;
   period: string;
 }
 
@@ -106,6 +108,8 @@ export const portfolioData = {
         "헬스장 회원과 트레이너를 연결하는 퍼스널 트레이닝 관리 플랫폼입니다. 복잡한 예약 시스템을 자동화하고, AI 기반의 운동 피드백을 통해 체계적인 회원 관리 환경을 제공합니다.",
       techStack: ["Flutter", "Node.js", "MongoDB", "Firebase", "AI Logic"],
       period: "2025.11 - Present",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.routn.mypt",
+      appStoreUrl: "https://apps.apple.com/kr/app/id6760650802",
     },
     {
       title: "WinForm to WPF Modernization",
