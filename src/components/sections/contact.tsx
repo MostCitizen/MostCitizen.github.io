@@ -15,7 +15,7 @@ export function Contact() {
         <div className="flex flex-col md:flex-row justify-center items-center gap-6 pt-4">
           <a
             href={`mailto:${portfolioData.email}`}
-            className="flex items-center gap-3 px-6 py-3 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-xl font-medium hover:opacity-90 transition-opacity"
+            className="flex items-center gap-3 px-6 py-3 bg-primary text-white rounded-xl font-medium shadow-lg shadow-primary/10 hover:bg-primary-hover hover:scale-105 transition-all active:scale-95"
           >
             <Mail className="h-5 w-5" />
             Email Me
@@ -25,7 +25,7 @@ export function Contact() {
               href={portfolioData.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+              className="p-3 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 active:scale-95"
             >
               <GitHubIcon className="h-6 w-6" />
             </a>

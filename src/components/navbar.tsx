@@ -43,7 +43,7 @@ export function Navbar() {
         )}
       >
         <a href="#" className="text-2xl font-black tracking-tighter group">
-          H<span className="text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">Y</span>.
+          H<span className="text-primary transition-colors">Y</span>.
         </a>
         
         <div className="hidden md:flex items-center gap-10">
@@ -51,7 +51,7 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              className="text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-primary transition-colors"
             >
               {link.name}
             </a>

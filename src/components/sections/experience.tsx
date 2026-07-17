@@ -15,7 +15,7 @@ export function Experience() {
             viewport={{ once: true }}
             className="flex items-center gap-2 mb-4"
           >
-            <span className="w-12 h-[2px] bg-zinc-900 dark:bg-white" />
+            <span className="w-12 h-[2px] bg-primary" />
             <span className="text-sm font-black uppercase tracking-[0.4em] text-zinc-400">Career Path</span>
           </motion.div>
           <h3 className="text-5xl md:text-7xl font-bold tracking-tighter">Professional <br /> <span className="text-zinc-400">Experience</span></h3>
@@ -55,7 +55,7 @@ export function Experience() {
                 <ul className="space-y-6">
                   {exp.description.map((item, i) => (
                     <li key={i} className="group flex gap-4 text-zinc-600 dark:text-zinc-400 text-lg font-light leading-relaxed">
-                      <span className="flex-none w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 mt-3 group-hover:bg-zinc-900 dark:group-hover:bg-white transition-colors" />
+                      <span className="flex-none w-1.5 h-1.5 rounded-full bg-primary/30 mt-3 group-hover:bg-primary transition-colors" />
                       <span className="flex-1">{item}</span>
                     </li>
                   ))}

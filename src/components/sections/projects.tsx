@@ -54,13 +54,13 @@ export function Projects() {
                 className="group relative"
               >
                 {/* 카드 본체 */}
-                <div className="h-full flex flex-col p-8 rounded-[2rem] bg-zinc-50/50 dark:bg-zinc-900/20 border border-zinc-200/50 dark:border-zinc-800/50 hover:bg-white dark:hover:bg-zinc-900/40 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:hover:shadow-none overflow-hidden">
+                <div className="h-full flex flex-col p-8 rounded-[2rem] bg-zinc-50/50 dark:bg-zinc-900/20 border border-zinc-200/50 dark:border-zinc-800/50 hover:bg-white dark:hover:bg-zinc-900/40 transition-all duration-500 hover:border-primary/20 hover:shadow-[0_20px_50px_rgba(97,95,255,0.06)] dark:hover:shadow-[0_20px_50px_rgba(97,95,255,0.02)] overflow-hidden">
                   {/* 상단: 아이콘 & 상태 뱃지 */}
                   <div className="flex justify-between items-start mb-10">
                     <div className="flex items-center gap-3">
-                      <div className="p-3 rounded-2xl bg-white dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 shadow-sm">
+                      <div className="p-3 rounded-2xl bg-white dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 shadow-sm text-primary">
                         {isPublic ? (
-                          <Globe className="w-5 h-5 text-zinc-900 dark:text-zinc-100" />
+                          <Globe className="w-5 h-5" />
                         ) : (
                           <ShieldCheck className="w-5 h-5 text-zinc-400" />
                         )}
@@ -81,7 +81,7 @@ export function Projects() {
                         <a
                           href={project.githubUrl}
                           target="_blank"
-                          className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                          className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-primary"
                         >
                           <GitHubIcon className="w-5 h-5" />
                         </a>
@@ -90,7 +90,7 @@ export function Projects() {
                         <a
                           href={project.playStoreUrl}
                           target="_blank"
-                          className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                          className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-primary"
                           title="Google Play Store"
                         >
                           <PlayStoreIcon className="w-5 h-5" />
@@ -100,7 +100,7 @@ export function Projects() {
                         <a
                           href={project.appStoreUrl}
                           target="_blank"
-                          className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                          className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-primary"
                           title="Apple App Store"
                         >
                           <AppStoreIcon className="w-5 h-5" />
@@ -110,7 +110,7 @@ export function Projects() {
                         <a
                           href={project.liveUrl}
                           target="_blank"
-                          className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
+                          className="p-2.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-primary"
                         >
                           <ExternalLink className="w-5 h-5" />
                         </a>
@@ -120,7 +120,7 @@ export function Projects() {
 
                   {/* 중단: 타이틀 & 설명 */}
                   <div className="flex-1 space-y-4">
-                    <h4 className="text-2xl font-bold tracking-tight group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
+                    <h4 className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
                       {project.title}
                     </h4>
                     <p className="text-zinc-500 dark:text-zinc-400 text-[15px] leading-relaxed line-clamp-3">
@@ -134,7 +134,7 @@ export function Projects() {
                       {project.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 text-[10px] font-bold bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 text-zinc-500 dark:text-zinc-400 rounded-lg group-hover:border-zinc-300 dark:group-hover:border-zinc-600 transition-colors"
+                          className="px-3 py-1 text-[10px] font-bold bg-white dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 text-zinc-500 dark:text-zinc-400 rounded-lg group-hover:border-primary/20 group-hover:text-primary transition-colors"
                         >
                           {tech}
                         </span>

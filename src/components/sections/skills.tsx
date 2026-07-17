@@ -42,14 +42,14 @@ export function Skills() {
                 className="glass-card rounded-3xl p-8 hover:bg-white dark:hover:bg-zinc-900 transition-colors group"
               >
                 <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-8 flex items-center gap-2">
-                  <span className="w-8 h-[1px] bg-zinc-200 dark:bg-zinc-800" />
+                  <span className="w-8 h-[1px] bg-zinc-200 dark:bg-zinc-800 group-hover:bg-primary/50 transition-colors" />
                   {category}
                 </h4>
                 <div className="flex flex-wrap gap-3">
                   {categorySkills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="px-4 py-2 bg-zinc-100 dark:bg-zinc-800/50 rounded-full text-sm font-semibold text-zinc-700 dark:text-zinc-300 group-hover:bg-white dark:group-hover:bg-zinc-800 border border-transparent group-hover:border-zinc-200 dark:group-hover:border-zinc-700 transition-all shadow-sm"
+                      className="px-4 py-2 bg-zinc-100 dark:bg-zinc-800/50 rounded-full text-sm font-semibold text-zinc-700 dark:text-zinc-300 group-hover:bg-white dark:group-hover:bg-zinc-800 border border-transparent group-hover:border-primary/20 group-hover:text-primary transition-all shadow-sm"
                     >
                       {skill.name}
                     </div>
