@@ -29,7 +29,7 @@ export interface Experience {
 }
 
 export const portfolioData = {
-  name: "이호윤",
+  name: "LeeHoYoon",
   title: "Software Engineer",
   email: "wjsghk1588@gmail.com",
   github: "https://github.com/MostCitizen",
