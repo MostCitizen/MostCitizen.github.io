@@ -199,33 +199,33 @@ export function Projects() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", duration: 0.4 }}
-              className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto no-scrollbar rounded-[2rem] bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-8 md:p-10 shadow-2xl space-y-8"
+              className="relative w-full max-w-3xl max-h-[90vh] sm:max-h-[85vh] overflow-y-auto no-scrollbar rounded-[1.5rem] sm:rounded-[2rem] bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 px-5 sm:px-8 md:px-10 pb-5 sm:pb-8 md:pb-10 pt-0 shadow-2xl space-y-6 sm:space-y-8"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Header */}
-              <div className="flex justify-between items-start">
-                <div className="space-y-2">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-primary">
+              {/* Header (Sticky) */}
+              <div className="sticky top-0 z-10 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md flex justify-between items-center gap-4 -mx-5 sm:-mx-8 md:-mx-10 px-5 sm:px-8 md:px-10 py-4 sm:py-5 border-b border-zinc-100 dark:border-zinc-800/80">
+                <div className="space-y-1">
+                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-primary block">
                     {selectedProject.period}
                   </span>
-                  <h4 className="text-3xl font-black tracking-tight text-zinc-900 dark:text-white leading-tight">
+                  <h4 className="text-lg sm:text-xl md:text-2xl font-black tracking-tight text-zinc-900 dark:text-white leading-tight">
                     {selectedProject.title}
                   </h4>
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors"
+                  className="p-1.5 sm:p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors flex-none"
                 >
-                  <X className="w-6 h-6" />
+                  <X className="w-5 sm:w-6 h-5 sm:h-6" />
                 </button>
               </div>
 
               {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {selectedProject.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3.5 py-1.5 text-xs font-semibold bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/50 dark:border-zinc-700/50 text-zinc-600 dark:text-zinc-300 rounded-xl"
+                    className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[10px] sm:text-xs font-semibold bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/50 dark:border-zinc-700/50 text-zinc-600 dark:text-zinc-300 rounded-lg sm:rounded-xl"
                   >
                     {tech}
                   </span>
@@ -233,28 +233,28 @@ export function Projects() {
               </div>
 
               {/* Description */}
-              <div className="space-y-3">
-                <h5 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Project Overview</h5>
-                <p className="text-zinc-700 dark:text-zinc-300 text-lg leading-relaxed whitespace-pre-line">
+              <div className="space-y-2 sm:space-y-3">
+                <h5 className="text-[10px] sm:text-xs font-bold text-zinc-400 uppercase tracking-widest">Project Overview</h5>
+                <p className="text-zinc-700 dark:text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed whitespace-pre-line">
                   {selectedProject.longDescription || selectedProject.description}
                 </p>
               </div>
 
               {/* Role & Contribution info */}
               {(selectedProject.role || selectedProject.contribution) && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-100 dark:border-zinc-800/50">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-100 dark:border-zinc-800/50">
                   {selectedProject.role && (
-                    <div className="space-y-1">
-                      <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest block">Role</span>
-                      <span className="text-[14px] font-bold text-zinc-800 dark:text-zinc-200">
+                    <div className="space-y-0.5 sm:space-y-1">
+                      <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-widest block">Role</span>
+                      <span className="text-xs sm:text-[14px] font-bold text-zinc-800 dark:text-zinc-200">
                         {selectedProject.role}
                       </span>
                     </div>
                   )}
                   {selectedProject.contribution && (
-                    <div className="space-y-1">
-                      <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest block">Contribution</span>
-                      <span className="text-[14px] font-bold text-primary">
+                    <div className="space-y-0.5 sm:space-y-1">
+                      <span className="text-[9px] sm:text-[10px] font-bold text-zinc-400 uppercase tracking-widest block">Contribution</span>
+                      <span className="text-xs sm:text-[14px] font-bold text-primary">
                         {selectedProject.contribution}
                       </span>
                     </div>
@@ -264,12 +264,12 @@ export function Projects() {
 
               {/* Key Achievements */}
               {selectedProject.keyAchievements && selectedProject.keyAchievements.length > 0 && (
-                <div className="space-y-3">
-                  <h5 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Key Achievements</h5>
-                  <ul className="space-y-4">
+                <div className="space-y-2.5 sm:space-y-3">
+                  <h5 className="text-[10px] sm:text-xs font-bold text-zinc-400 uppercase tracking-widest">Key Achievements</h5>
+                  <ul className="space-y-3 sm:space-y-4">
                     {selectedProject.keyAchievements.map((achievement, i) => (
-                      <li key={i} className="flex gap-3 text-zinc-600 dark:text-zinc-300 leading-relaxed text-[15px]">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-none" />
+                      <li key={i} className="flex gap-2.5 sm:gap-3 text-zinc-600 dark:text-zinc-300 leading-relaxed text-xs sm:text-sm md:text-[15px]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-none" />
                         <span className="flex-1">{achievement}</span>
                       </li>
                     ))}
@@ -279,22 +279,22 @@ export function Projects() {
 
               {/* Challenges */}
               {selectedProject.challenges && (
-                <div className="space-y-3">
-                  <h5 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Troubleshooting & Challenge</h5>
-                  <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-100 dark:border-zinc-800/50 text-zinc-600 dark:text-zinc-300 leading-relaxed text-[15px]">
+                <div className="space-y-2.5 sm:space-y-3">
+                  <h5 className="text-[10px] sm:text-xs font-bold text-zinc-400 uppercase tracking-widest">Troubleshooting & Challenge</h5>
+                  <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-100 dark:border-zinc-800/50 text-zinc-600 dark:text-zinc-300 leading-relaxed text-xs sm:text-sm md:text-[15px]">
                     {selectedProject.challenges}
                   </div>
                 </div>
               )}
 
               {/* Links / Call to Action */}
-              <div className="flex flex-wrap gap-4 pt-6 border-t border-zinc-100 dark:border-zinc-800/50">
+              <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-zinc-100 dark:border-zinc-800/50">
                 {selectedProject.playStoreUrl && (
                   <a
                     href={selectedProject.playStoreUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-bold hover:bg-primary-hover hover:scale-105 active:scale-95 transition-all text-sm"
+                    className="flex items-center justify-center gap-2 px-5 py-3 bg-primary text-white rounded-xl font-bold hover:bg-primary-hover hover:scale-105 active:scale-95 transition-all text-sm w-full sm:w-auto"
                   >
                     <PlayStoreIcon className="w-4 h-4" />
                     Google Play Store
@@ -305,7 +305,7 @@ export function Projects() {
                     href={selectedProject.appStoreUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-bold hover:bg-primary-hover hover:scale-105 active:scale-95 transition-all text-sm"
+                    className="flex items-center justify-center gap-2 px-5 py-3 bg-primary text-white rounded-xl font-bold hover:bg-primary-hover hover:scale-105 active:scale-95 transition-all text-sm w-full sm:w-auto"
                   >
                     <AppStoreIcon className="w-4 h-4" />
                     App Store
@@ -316,7 +316,7 @@ export function Projects() {
                     href={selectedProject.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 rounded-xl font-bold hover:scale-105 active:scale-95 transition-all text-sm text-zinc-700 dark:text-zinc-300"
+                    className="flex items-center justify-center gap-2 px-5 py-3 border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800 rounded-xl font-bold hover:scale-105 active:scale-95 transition-all text-sm text-zinc-700 dark:text-zinc-300 w-full sm:w-auto"
                   >
                     <GitHubIcon className="w-4 h-4" />
                     GitHub
@@ -327,7 +327,7 @@ export function Projects() {
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-xl font-bold hover:opacity-90 hover:scale-105 active:scale-95 transition-all text-sm"
+                    className="flex items-center justify-center gap-2 px-5 py-3 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-xl font-bold hover:opacity-90 hover:scale-105 active:scale-95 transition-all text-sm w-full sm:w-auto"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
