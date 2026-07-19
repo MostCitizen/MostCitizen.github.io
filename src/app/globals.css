@@ -66,3 +66,13 @@ body {
   background-size: 200% auto;
   animation: gradient-move 5s linear infinite;
 }
+
+/* 스크롤바 감추기 유틸리티 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+

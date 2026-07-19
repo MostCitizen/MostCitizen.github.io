@@ -54,7 +54,7 @@ export function Experience() {
                 
                 <ul className="space-y-6">
                   {exp.description.map((item, i) => (
-                    <li key={i} className="group flex gap-4 text-zinc-600 dark:text-zinc-400 text-lg font-light leading-relaxed">
+                    <li key={i} className="group flex gap-4 text-zinc-800 dark:text-zinc-200 text-lg font-normal leading-relaxed">
                       <span className="flex-none w-1.5 h-1.5 rounded-full bg-primary/30 mt-3 group-hover:bg-primary transition-colors" />
                       <span className="flex-1">{item}</span>
                     </li>

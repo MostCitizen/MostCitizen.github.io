@@ -22,18 +22,18 @@ export function Hero() {
             Software Engineer Portfolio
           </h2>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[1.1]">
-            I&apos;m <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 via-primary to-zinc-900 dark:from-white dark:via-primary dark:to-white bg-[length:200%_auto] animate-gradient">{portfolioData.name}</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 via-primary to-zinc-900 dark:from-white dark:via-primary dark:to-white bg-[length:200%_auto] animate-gradient">{portfolioData.name}</span>
           </h1>
           <p className="text-2xl md:text-3xl font-medium text-zinc-400 dark:text-zinc-500 mt-4 tracking-tight">
             Building efficient code & scalable systems.
           </p>
         </motion.div>
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed font-light"
+          className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
         >
           {portfolioData.about}
         </motion.p>
@@ -70,7 +70,7 @@ export function Hero() {
           <ArrowDown className="h-4 w-4 animate-bounce" />
         </div>
       </motion.div>
-      
+
       <style jsx>{`
         @keyframes gradient {
           0% { background-position: 0% 50%; }
