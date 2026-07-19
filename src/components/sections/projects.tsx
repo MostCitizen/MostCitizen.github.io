@@ -235,7 +235,7 @@ export function Projects() {
               {/* Description */}
               <div className="space-y-3">
                 <h5 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Project Overview</h5>
-                <p className="text-zinc-700 dark:text-zinc-300 text-lg font-light leading-relaxed whitespace-pre-line">
+                <p className="text-zinc-700 dark:text-zinc-300 text-lg leading-relaxed whitespace-pre-line">
                   {selectedProject.longDescription || selectedProject.description}
                 </p>
               </div>
