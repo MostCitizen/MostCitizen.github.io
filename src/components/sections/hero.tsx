@@ -7,7 +7,7 @@ import { ArrowDown } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center items-center px-6 pt-24 md:pt-32 relative overflow-hidden">
       {/* 배경 장식 요소 */}
       <div className="absolute top-1/4 -left-20 w-72 h-72 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl -z-10" />
@@ -63,7 +63,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-10"
+        className="absolute bottom-10 hidden md:block"
       >
         <div className="flex flex-col items-center gap-2 text-zinc-400">
           <span className="text-[10px] uppercase tracking-[0.3em] font-bold">Scroll</span>
