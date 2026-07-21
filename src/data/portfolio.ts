@@ -37,7 +37,6 @@ export const portfolioData = {
     "효율적인 코드와 확장 가능한 시스템을 지향합니다. 2년 10개월간의 실무 경험을 통해 C#/.NET 기반의 시스템 고도화와 성능 최적화를 주도해 왔으며, 최근에는 Node.js와 Flutter를 활용한 모던 앱 개발로 역량을 확장하고 있습니다.",
   skills: [
     { name: "C#", category: "Backend", level: 5 },
-    { name: ".NET Core", category: "Backend", level: 5 },
     { name: "Node.js (Express)", category: "Backend", level: 4 },
     { name: "TypeScript / JS", category: "Backend", level: 4 },
     { name: "Entity Framework", category: "Backend", level: 5 },
@@ -51,6 +50,8 @@ export const portfolioData = {
     { name: "MongoDB", category: "Database", level: 4 },
     { name: "dottrace", category: "Others", level: 5 },
     { name: "Git", category: "Others", level: 4 },
+    { name: "Linear", category: "Others", level: 4 },
+    { name: "Jira", category: "Others", level: 4 },
     { name: "ORM Optimization", category: "Others", level: 5 },
   ] as Skill[],
   experiences: [
@@ -168,7 +169,7 @@ export const portfolioData = {
       techStack: ["dottrace", "C#", "MSSQL", "Query/ORM Optimization"],
       period: "2022.07 - 2023.05",
       role: "소프트웨어 개발자",
-      contribution: "기여도 100% (병목 분석 및 데이터베이스 튜닝 전담)",
+      contribution: "기여도 100%",
 
       longDescription:
         "사용자가 빈번히 요청하는 주요 통계 및 예약 보기 화면의 지연을 해결하기 위해, 프로파일러 분석을 동원한 성능 최적화 프로젝트입니다.",
