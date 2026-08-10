@@ -1,6 +1,6 @@
 import React from "react";
 import { portfolioData } from "@/data/portfolio";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
 
 export function Contact() {
@@ -20,6 +20,15 @@ export function Contact() {
             <Mail className="h-5 w-5" />
             Email Me
           </a>
+          {portfolioData.phone && (
+            <a
+              href={`tel:${portfolioData.phone}`}
+              className="flex items-center gap-3 px-6 py-3 glass-card rounded-xl font-medium hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 active:scale-95 text-zinc-900 dark:text-zinc-100"
+            >
+              <Phone className="h-5 w-5 text-primary" />
+              {portfolioData.phone}
+            </a>
+          )}
           <div className="flex gap-4">
             <a
               href={portfolioData.github}

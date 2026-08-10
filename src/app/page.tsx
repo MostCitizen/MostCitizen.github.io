@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/sections/hero";
 import { Skills } from "@/components/sections/skills";
-import { Experience } from "@/components/sections/experience";
 import { Projects } from "@/components/sections/projects";
 import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/footer";
@@ -13,9 +12,6 @@ export default function Home() {
       <Hero />
       <div id="about" className="scroll-mt-20">
         <Skills />
-      </div>
-      <div id="experience" className="scroll-mt-20">
-        <Experience />
       </div>
       <div id="projects" className="scroll-mt-20">
         <Projects />

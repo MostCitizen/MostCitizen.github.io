@@ -56,11 +56,29 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
+          <a
+            href="/LeeHoYoon_Portfolio.pdf"
+            download="LeeHoYoon_Portfolio.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-bold uppercase tracking-widest text-primary hover:underline transition-all"
+          >
+            PDF
+          </a>
           <div className="w-[1px] h-4 bg-zinc-200 dark:bg-zinc-800" />
           <ThemeToggle />
         </div>
 
         <div className="md:hidden flex items-center gap-4">
+          <a
+            href="/LeeHoYoon_Portfolio.pdf"
+            download="LeeHoYoon_Portfolio.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-bold text-primary border border-primary/30 px-2.5 py-1 rounded-full"
+          >
+            PDF
+          </a>
           <ThemeToggle />
         </div>
       </div>
