@@ -3,7 +3,7 @@
 import React from "react";
 import { portfolioData } from "@/data/portfolio";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, FileText } from "lucide-react";
 
 export function Hero() {
   return (
@@ -46,13 +46,23 @@ export function Hero() {
         >
           <a
             href="#projects"
-            className="px-10 py-4 bg-primary text-white rounded-full font-bold shadow-xl shadow-primary/20 hover:bg-primary-hover hover:scale-105 transition-all active:scale-95"
+            className="px-8 py-4 bg-primary text-white rounded-full font-bold shadow-xl shadow-primary/20 hover:bg-primary-hover hover:scale-105 transition-all active:scale-95 text-center"
           >
             View Projects
           </a>
           <a
+            href="/LeeHoYoon_Portfolio.pdf"
+            download="LeeHoYoon_Portfolio.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 glass-card rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary/5 dark:hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 active:scale-95 text-primary text-center"
+          >
+            <FileText className="w-5 h-5" />
+            PDF Download
+          </a>
+          <a
             href="#contact"
-            className="px-10 py-4 glass-card rounded-full font-bold hover:bg-primary/5 dark:hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 active:scale-95"
+            className="px-8 py-4 glass-card rounded-full font-bold hover:bg-primary/5 dark:hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 active:scale-95 text-center"
           >
             Contact Me
           </a>

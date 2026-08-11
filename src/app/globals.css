@@ -67,6 +67,7 @@ body {
   animation: gradient-move 5s linear infinite;
 }
 
+
 /* 스크롤바 감추기 유틸리티 */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -75,4 +76,27 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* 인쇄 최적화 스타일 */
+@media print {
+  nav, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+  }
+  section {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    min-height: auto !important;
+  }
+  .glass-card {
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+}
+
 
